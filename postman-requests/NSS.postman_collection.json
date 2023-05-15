@@ -1,0 +1,750 @@
+{
+	"info": {
+		"_postman_id": "583f4177-3f4a-49e8-88f5-a1afc3b3f5d1",
+		"name": "NSS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18666356"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "token",
+					"item": [
+						{
+							"name": "token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"vaclav2\",\r\n    \"password\": \"heslo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/nss/auth/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"nss",
+										"auth",
+										"token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "get user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YWNsYXYyIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlVTRVIifV0sImV4cCI6MTY4NDE4MDYxMX0.NPA1tH9xEOtMSo0Cfh1194ei3KPOnSwGCoKbxtZcVhbgImTTRCd2S7wJEqfly-rVX2rz-je9AqV1uTSv97hLWQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/nss/auth/user/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"nss",
+										"auth",
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YWNsYXYzIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IkFETUlOIn1dLCJleHAiOjE2ODQxODIyMDR9.qadRAPEsxKNo3t-1lVnrTEjBznP99dS9qvscK5UOMXZ9ssXB-AyqLqhorhe1ZMIdQqCcNeGL8AzCajsS1d0rcA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"vaclav4\",\r\n    \"password\": \"heslo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/nss/auth/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"nss",
+										"auth",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add authority",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YWNsYXYzIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IkFETUlOIn1dLCJleHAiOjE2ODQxODIyMDR9.qadRAPEsxKNo3t-1lVnrTEjBznP99dS9qvscK5UOMXZ9ssXB-AyqLqhorhe1ZMIdQqCcNeGL8AzCajsS1d0rcA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    \"USER\"\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/nss/auth/user/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"nss",
+										"auth",
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "health",
+					"item": [
+						{
+							"name": "health",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/nss/auth/health",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"nss",
+										"auth",
+										"health"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "session",
+					"item": [
+						{
+							"name": "get session",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YWNsYXYyIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlVTRVIifV0sImV4cCI6MTY4NDE4MDYxMX0.NPA1tH9xEOtMSo0Cfh1194ei3KPOnSwGCoKbxtZcVhbgImTTRCd2S7wJEqfly-rVX2rz-je9AqV1uTSv97hLWQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/nss/auth/session/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"nss",
+										"auth",
+										"session",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create session",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YWNsYXYyIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlVTRVIifV0sImV4cCI6MTY4NDE4MDYxMX0.NPA1tH9xEOtMSo0Cfh1194ei3KPOnSwGCoKbxtZcVhbgImTTRCd2S7wJEqfly-rVX2rz-je9AqV1uTSv97hLWQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Test session\",\r\n    \"detail\": \"test session detail\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/nss/auth/session/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"nss",
+										"auth",
+										"session",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "authority",
+					"item": [
+						{
+							"name": "get authority",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YWNsYXYyIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IlVTRVIifV0sImV4cCI6MTY4NDE4MDYxMX0.NPA1tH9xEOtMSo0Cfh1194ei3KPOnSwGCoKbxtZcVhbgImTTRCd2S7wJEqfly-rVX2rz-je9AqV1uTSv97hLWQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/nss/auth/authority",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"nss",
+										"auth",
+										"authority"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create authority",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YWNsYXYzIiwiYXV0aG9yaXRpZXMiOlt7ImF1dGhvcml0eSI6IkFETUlOIn1dLCJleHAiOjE2ODQxODI2MjB9.uHGx7HIcx9vAPmuH7hZuSIDXXEemDjZ2tcOkjpl9ezxM8e6GNNNccV9nTBbEUFx7UgA5bIwHIlpXofHfEodjZA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"REST\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/nss/auth/authority",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"nss",
+										"auth",
+										"authority"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "rest",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "create user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Password",
+										"value": "heslo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"vaclav\",\r\n    \"password\": \"heslo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/nss/rest/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"nss",
+										"rest",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Password",
+										"value": "heslo",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/nss/rest/user/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"nss",
+										"rest",
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add authority",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Password",
+										"value": "heslo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    \"USER\"\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/nss/rest/user/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"nss",
+										"rest",
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "health",
+					"item": [
+						{
+							"name": "health",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/nss/rest/health",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"nss",
+										"rest",
+										"health"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "authority",
+					"item": [
+						{
+							"name": "get authorities",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Password",
+										"value": "heslo",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/nss/rest/authority",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"nss",
+										"rest",
+										"authority"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create authority",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Password",
+										"value": "heslo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"REST\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/nss/rest/authority",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"nss",
+										"rest",
+										"authority"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "session",
+					"item": [
+						{
+							"name": "get session",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Password",
+										"value": "heslo",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8081/nss/rest/session/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"nss",
+										"rest",
+										"session",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create session",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Password",
+										"value": "heslo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Test session\",\r\n    \"detail\": \"test session detail\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/nss/rest/session/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"nss",
+										"rest",
+										"session",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "websocket",
+			"item": [
+				{
+					"name": "health",
+					"item": [
+						{
+							"name": "health",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Password",
+										"value": "heslo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"message\":\"Vaclav\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/nss/websocket/health",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"nss",
+										"websocket",
+										"health"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
